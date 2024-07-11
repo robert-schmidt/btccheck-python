@@ -1,0 +1,14 @@
+services:
+  string-checker:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    env_file:
+      - .env
+    volumes:
+      - ./output:/app/output:delegated
+    environment:
+      - DEBIAN_FRONTEND=noninteractive
+
+volumes:
+  output_data:
